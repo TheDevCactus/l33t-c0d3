@@ -6,11 +6,14 @@ public:
         while (h < haystack.length()) {
           h++;
           if (h - l != needle.length()) continue;
+          
           bool foundMatch = true;
           for (uint i = 0; i < needle.length(); i ++) {
             if (haystack[l + i] == needle[i]) continue;
             foundMatch = false;
+            break;
           }
+          
           if (foundMatch) return l;
           l++;
         }
